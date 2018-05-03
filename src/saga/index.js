@@ -1,8 +1,10 @@
 import { fork } from 'redux-saga/effects';
-import { watchFetchArticles } from './fetchArticles'
+import { watcherFetchArticles } from './fetchArticles'
+import { watcherFetchTags } from './fetchTags'
 
 export function* rootSaga() {
   yield [
-    fork(watchFetchArticles)
+    fork(watcherFetchArticles),
+    fork(watcherFetchTags)
   ];
 }

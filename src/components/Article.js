@@ -6,9 +6,7 @@ class Article extends Component {
       <div class="article-page">
         <div class="banner">
           <div class="container">
-
             <h1>How to build webapps that scale</h1>
-
             <div class="article-meta">
               <a href=""><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
               <div class="info">
