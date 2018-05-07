@@ -2,9 +2,26 @@ import React, { Component } from 'react';
 import Banner from './Banner';
 import PopularTag from './PopularTag';
 import ArticleList from './ArticleList';
+import Pagination from './Pagination';
+// import { connect } from 'react-redux';
 
 class Home extends Component {
+  // handleSetPage = (e) => {
+  //   e.preventDefault();
+  //   console.log('click');
+  // }
+
+  // setPage = (page) => {
+  //   console.log(page);
+  // }
+
   render() {
+    // const paginationList = [];
+    
+    // for (let i = 0; i < Math.ceil(this.props.articlesCount/10); i++) {
+    //   paginationList.push(i);
+    // }    
+    
     return(
       <div className="home-page">
         <Banner />
@@ -21,7 +38,8 @@ class Home extends Component {
                   </li>
                 </ul>
               </div>      
-              <ArticleList />     
+              <ArticleList />
+              <Pagination />
             </div>
 
             <div className="col-md-3">
@@ -33,5 +51,10 @@ class Home extends Component {
     )
   }
 }
+
+// const mapStateToProps = state => ({
+//   articles: state.articles.articles,
+//   articlesCount: state.articles.articlesCount
+// })
 
 export default Home;

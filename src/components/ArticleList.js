@@ -1,5 +1,6 @@
 import React,  { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchArticles } from '../action';
 
 class ArticleList extends Component {
   componentWillMount() {
@@ -7,8 +8,10 @@ class ArticleList extends Component {
   }
 
   render() {
+    const { articles } = this.props;
+
     return(
-      this.props.articles.length && this.props.articles.map((article, index) => {
+      articles.length ? articles.map((article, index) => {
         return (
           <div key={index} className="article-preview">
             <div className="article-meta">
@@ -43,7 +46,7 @@ class ArticleList extends Component {
             </a>            
           </div>
         )
-      })
+      }) : <div className="article-preview">Loading articles...</div>
     )
   }
 }
@@ -52,12 +55,8 @@ const mapStateToProps = state => ({
   articles: state.articles.articles
 })
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchArticles: () => {
-      dispatch({type: 'FETCH_ARTICLES'})
-    }
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  fetchArticles: () => dispatch(fetchArticles())
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);
