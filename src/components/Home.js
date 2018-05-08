@@ -3,6 +3,7 @@ import Banner from './Banner';
 import PopularTag from './PopularTag';
 import ArticleList from './ArticleList';
 import Pagination from './Pagination';
+
 // import { connect } from 'react-redux';
 
 class Home extends Component {
@@ -37,7 +38,7 @@ class Home extends Component {
                     <a className="nav-link active" href="">Global Feed</a>
                   </li>
                 </ul>
-              </div>      
+              </div>
               <ArticleList />
               <Pagination />
             </div>
