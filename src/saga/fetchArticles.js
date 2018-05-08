@@ -16,7 +16,7 @@ export function* workerFetchArticles() {
   try {
     const response = yield axios({
       method: 'GET',
-      url: 'https://conduit.productionready.io/api/articles?limit=' + `${DEFAULT_LIMIT}`
+      url: `https://conduit.productionready.io/api/articles?limit=${DEFAULT_LIMIT}`
     })
     yield put({type: FETCH_ARTICLES_SUCCESS, payload: response.data})
   } catch (error) {

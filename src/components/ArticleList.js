@@ -1,6 +1,7 @@
 import React,  { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchArticles } from '../action';
+import { Link } from "react-router-dom";
 
 class ArticleList extends Component {
   componentWillMount() {
@@ -26,7 +27,8 @@ class ArticleList extends Component {
                 <i className="ion-heart"></i> {article.favoritesCount}
               </button>
             </div>
-            <a href="" className="preview-link">
+            
+            <Link to={`/article/${article.slug}`} className="preview-link">            
               <h1>{article.title}</h1>
               <p>{article.description}</p>
               <span>Read more...</span>
@@ -43,7 +45,7 @@ class ArticleList extends Component {
                   }
                 </ul>                
               }              
-            </a>            
+            </Link>         
           </div>
         )
       }) : <div className="article-preview">Loading articles...</div>

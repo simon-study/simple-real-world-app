@@ -14,8 +14,6 @@ class Pagination extends Component {
       paginationList.push(i);
     }  
 
-    console.log(this.props);
-
     return (
       <ul className="pagination">
         {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
-class Header extends Component {
+class HeaderLogin extends Component {
   render() {
     return(
       <nav className="navbar navbar-light">
@@ -8,20 +9,25 @@ class Header extends Component {
           <a className="navbar-brand" href="index.html">conduit</a>
           <ul className="nav navbar-nav pull-xs-right">
             <li className="nav-item">
-              <a className="nav-link active" href="">Home</a>
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
             </li>
+            
             <li className="nav-item">
-              <a className="nav-link" href="">
+              <Link to="/newpost" className="nav-link">
                 <i className="ion-compose"></i>&nbsp;New Post
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="">
+              <Link to='/settings' className="nav-link">
                 <i className="ion-gear-a"></i>&nbsp;Settings
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="">Sign up</a>
+              <Link to="/signup" className="nav-link">
+                Sign up
+              </Link>
             </li>
           </ul>
         </div>
@@ -30,4 +36,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default HeaderLogin;

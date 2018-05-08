@@ -10,15 +10,15 @@ class Footer extends Component {
     return(
       <div className="sidebar">
         <p>Popular Tags</p>
-        <div className="tag-list">
+         <div className="tag-list">
           {
-            this.props.tags.length ? this.props.tags.map((tag, index) => {
+            this.props.tags && this.props.tags[0] ? this.props.tags.map((tag, index) => {
               return (
                 <a key={index} href="" className="tag-pill tag-default">{tag}</a>
               )
             }) : <div>Loading tags...</div>
           }
-        </div>
+        </div> 
       </div>
     )
   }
